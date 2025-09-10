@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+frontend/node_modules/
+uploads/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Build output
+frontend/dist/
+frontend/.vite/
+frontend/node_modules/
+
+# Logs
+logs/
+*.log
+pm2.log
+*.pid
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Uploaded files
+uploads/
+!uploads/defaults/avatar-placeholder.webp
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+
+# Optional: lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

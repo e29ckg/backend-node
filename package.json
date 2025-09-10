@@ -1,0 +1,40 @@
+{
+  "name": "backend-node",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "imports": {
+    "#config/*": "./src/config/*",
+    "#db/*": "./src/db/*",
+    "#routes/*": "./src/routes/*",
+    "#controllers/*": "./src/controllers/*",
+    "#services/*": "./src/services/*",
+    "#middlewares/*": "./src/middlewares/*"
+  },
+  "scripts": {
+    "dev:backend": "nodemon src/server.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "npm --prefix frontend run build",
+    "serve:frontend": "npm run build:frontend && node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "concurrently": "^9.2.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.14.5",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
