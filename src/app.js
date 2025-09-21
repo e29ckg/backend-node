@@ -24,7 +24,14 @@ app.use('/api/profile', profileRoutes);
 
 app.get('/api/health', (req, res) => res.json({ ok: true, time: new Date() }));
 
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+// app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+app.use(express.static(path.join(process.cwd(), 'frontend/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(process.cwd(), 'frontend/dist/index.html'));
+});
 
 app.listen(config.port, () => {
   console.log(`Backend running on http://localhost:${config.port}`);
